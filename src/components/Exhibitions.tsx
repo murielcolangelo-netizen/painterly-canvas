@@ -61,71 +61,63 @@ const Exhibitions = () => {
         </div>
 
         {/* Current and Upcoming Exhibitions */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">
             Expositions actuelles et à venir
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-8">
             {currentExhibitions.map((exhibition, index) => (
-              <Card key={index} className="border-border">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg text-foreground">
+              <div key={index} className="relative pl-8 border-l-2 border-border">
+                <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h4 className="text-xl font-semibold text-foreground">
                       {exhibition.title}
-                    </CardTitle>
+                    </h4>
                     <Badge 
                       variant={exhibition.status === 'current' ? 'default' : 'secondary'}
-                      className="shrink-0"
+                      className="text-xs"
                     >
                       {exhibition.status === 'current' ? 'En cours' : 'À venir'}
                     </Badge>
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin size={16} />
-                    {exhibition.location}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CalendarDays size={16} />
-                    {exhibition.dates}
-                  </div>
-                  <Badge variant="outline" className="text-xs">
+                  <p className="text-muted-foreground">
+                    {exhibition.dates} • {exhibition.location}
+                  </p>
+                  <p className="text-sm text-muted-foreground italic">
                     {exhibition.type}
-                  </Badge>
-                </CardContent>
-              </Card>
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Past Exhibitions */}
         <div>
-          <h3 className="text-2xl font-semibold text-foreground mb-6">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">
             Expositions passées
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="space-y-6">
             {pastExhibitions.map((exhibition, index) => (
-              <Card key={index} className="border-border">
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-foreground mb-2">
+              <div key={index} className="flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-border/50 last:border-b-0">
+                <div className="space-y-1">
+                  <h4 className="text-lg font-medium text-foreground">
                     {exhibition.title}
                   </h4>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <MapPin size={14} />
-                      {exhibition.location}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CalendarDays size={14} />
-                      {exhibition.dates}
-                    </div>
-                  </div>
-                  <Badge variant="outline" className="text-xs mt-3">
+                  <p className="text-muted-foreground">
+                    {exhibition.location}
+                  </p>
+                </div>
+                <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
+                  <span className="text-sm text-muted-foreground">
+                    {exhibition.dates}
+                  </span>
+                  <span className="text-xs text-muted-foreground italic">
                     {exhibition.type}
-                  </Badge>
-                </CardContent>
-              </Card>
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
