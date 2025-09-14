@@ -17,7 +17,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <h1 className="text-xl font-bold text-foreground">Marie Dubois</h1>
+          <h1 className="text-xl font-bold text-foreground">Muriel Colangelo</h1>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

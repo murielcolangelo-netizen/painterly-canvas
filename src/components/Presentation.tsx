@@ -40,7 +40,7 @@ const Presentation = () => {
           <div className="flex justify-center">
             <img 
               src={artistPhoto} 
-              alt="Marie Dubois dans son atelier" 
+              alt="Muriel Colangelo dans son atelier" 
               className="w-full max-w-md rounded-lg shadow-lg"
             />
           </div>

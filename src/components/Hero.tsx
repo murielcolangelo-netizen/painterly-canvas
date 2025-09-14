@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-              Marie Dubois
+              Muriel Colangelo
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Artiste peintre contemporaine, je explore les couleurs et les formes 
@@ -40,7 +40,7 @@ const Hero = () => {
           <div className="relative">
             <img 
               src={painting1} 
-              alt="Œuvre de Marie Dubois" 
+              alt="Œuvre de Muriel Colangelo" 
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
